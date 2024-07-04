@@ -56,7 +56,7 @@ Once the application is running, you can access it at `http://localhost:3000`.
 ## Project Structure
 
 ```
-BackendBoard/
+BackendBoard/src
 ├── controllers/           # Controllers for handling requests
 ├── data_access/           # Data access layer
 ├── database/              # Database configuration and migrations
