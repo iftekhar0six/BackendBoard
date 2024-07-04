@@ -1,0 +1,828 @@
+{
+	"info": {
+		"_postman_id": "ce927c0f-5f17-44c3-b1ef-d4a99753b801",
+		"name": "Backend Board",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36326852"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"john_doe\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"SecurePass123!\",\r\n    \"mobileNumber\": \"1234567890\",\r\n    \"address\": \"123 Main St, Anytown, USA\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/profile/66839dd1a4d4659e6f1b52ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"66839dd1a4d4659e6f1b52ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/list?searchTerm=user4@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"list"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "user_4",
+									"disabled": true
+								},
+								{
+									"key": "searchTerm",
+									"value": "user4@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"john_doe\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"john.doe@example.com\",\r\n    \"password\": \"SecurePass123!\",\r\n    \"mobileNumber\": \"1234567890\",\r\n    \"address\": \"123 Main St, Anytown, USA\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/users/update-profile/6686840806c3dd4666498f19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"update-profile",
+								"6686840806c3dd4666498f19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/users/deactivate/66839dd1a4d4659e6f1b52ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"users",
+								"deactivate",
+								"66839dd1a4d4659e6f1b52ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admins",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"password\": \"AnotherSecurePass123!\",\r\n    \"mobileNumber\": \"0987654321\",\r\n    \"gender\": \"female\",\r\n    \"role\": \"user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admins/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admins",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Admin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admins/profile/66839e2aa4d4659e6f1b52fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admins",
+								"profile",
+								"66839e2aa4d4659e6f1b52fa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admins/list?searchTerm=john.doe@example.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admins",
+								"list"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "john.doe@example.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Smith\",\r\n    \"email\": \"jane.smith@example.com\",\r\n    \"password\": \"AnotherSecurePass123!\",\r\n    \"mobileNumber\": \"0987654321\",\r\n    \"gender\": \"female\",\r\n    \"role\": \"user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/admins/update-profile/668686594e1704086ee1ce69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admins",
+								"update-profile",
+								"668686594e1704086ee1ce69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Admin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/admins/deactivate-admin/66839e2aa4d4659e6f1b52fa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"admins",
+								"deactivate-admin",
+								"66839e2aa4d4659e6f1b52fa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Forums",
+			"item": [
+				{
+					"name": "Create Forum",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Technology\",\r\n    \"description\": \"Discuss all things related to technology.\",\r\n    \"categoryId\": \"60f8c4f9e1e52a2f6c79d8e3\", \r\n    \"createdBy\": \"66868991aad42d2290f868b5\", \r\n    \"moderators\": [\"66868991aad42d2290f868b5\", \"6686880cc7f8b83b1cb395fc\"], \r\n    \"rules\": \"1. Be respectful\\n2. No spamming\\n3. Stay on topic\",\r\n    \"logoUrl\": \"https://example.com/technology_logo.png\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/forums/create-forum/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"forums",
+								"create-forum",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Forum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/forums/search-forum/66868c4e2b5c014e5aeec9ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"forums",
+								"search-forum",
+								"66868c4e2b5c014e5aeec9ff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forum List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/forums/search-forum",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"forums",
+								"search-forum"
+							],
+							"query": [
+								{
+									"key": "searchTerm",
+									"value": "Fitness Fanatics",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Forum",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"name\": \"Technology\",\r\n    \"description\": \"Discuss all things related to technology.\",\r\n    \"categoryId\": \"60f8c4f9e1e52a2f6c79d8e3\", \r\n    // \"createdBy\": \"66868991aad42d2290f868b5\", \r\n    \"moderators\": [\"66868991aad42d2290f868b5\", \"6686880cc7f8b83b1cb395fc\"], \r\n    \"rules\": \"1. Be respectful\\n2. No spamming\\n3. Stay on topic\",\r\n    \"logoUrl\": \"https://example.com/technology_logo.png\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/forums/update-forum/66868c4e2b5c014e5aeec9ff",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"forums",
+								"update-forum",
+								"66868c4e2b5c014e5aeec9ff"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Forum",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/forums/delete-forum/66839e59a4d4659e6f1b5307",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"forums",
+								"delete-forum",
+								"66839e59a4d4659e6f1b5307"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Threads",
+			"item": [
+				{
+					"name": "Create Thread",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"60f8a9c8b2e3a82d4c10a6c2\", \r\n    \"title\": \"Sample Forum Post\",\r\n    \"content\": \"This is a sample forum post content.\",\r\n    \"createdBy\": \"6686840806c3dd4666498f19\", \r\n    \"tags\": [\"discussion\", \"sample\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/threads/create-thread",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"threads",
+								"create-thread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Thread",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/threads/search-thread/6686880cc7f8b83b1cb395fc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"threads",
+								"search-thread",
+								"6686880cc7f8b83b1cb395fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Thread List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/threads/search-thread",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"threads",
+								"search-thread"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Thread",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"forumId\": \"60f8a9c8b2e3a82d4c10a6c2\", \r\n    \"title\": \"Sample Forum Post\",\r\n    \"content\": \"This is a sample forum post content.\",\r\n    \"createdBy\": \"6686840806c3dd4666498f19\", \r\n    \"tags\": [\"discussion\", \"sample\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/threads/update-thread/6686880cc7f8b83b1cb395fc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"threads",
+								"update-thread",
+								"6686880cc7f8b83b1cb395fc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Thread",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/threads/delete-thread/66839e84a4d4659e6f1b5311",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"threads",
+								"delete-thread",
+								"66839e84a4d4659e6f1b5311"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Create Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"60f8b2d8c5b68e2e2839f7c1\", \r\n    \"content\": \"This is a reply to the thread.\",\r\n    \"createdBy\": \"6686880cc7f8b83b1cb395fc\", \r\n    \"attachments\": [\"image1.jpg\", \"document.pdf\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/posts/create-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"create-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/posts/search-post/66868995aad42d2290f868b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"search-post",
+								"66868995aad42d2290f868b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/posts/search-post",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"search-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"threadId\": \"60f8b2d8c5b68e2e2839f7c1\", \r\n    \"content\": \"This is a reply to the thread.\",\r\n    \"createdBy\": \"6686880cc7f8b83b1cb395fc\", \r\n    \"attachments\": [\"image1.jpg\", \"document.pdf\"]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/posts/update-post/66868995aad42d2290f868b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"update-post",
+								"66868995aad42d2290f868b7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Post",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/posts/delete-post/66839ea4a4d4659e6f1b531a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts",
+								"delete-post",
+								"66839ea4a4d4659e6f1b531a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Create Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdBy\": \"60b8d6c86e4d3c00158e4b3d\",\r\n    \"categoryName\": \"Sports\",\r\n    \"description\": \"Discussion about various sports and related topics.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/create-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"create-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/categories/search-category/66866a3de83bbf090827d7ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"search-category",
+								"66866a3de83bbf090827d7ef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Category List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/categories/search-category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"search-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"createdBy\": \"60b8d6c86e4d3c00158e4b3d\",\r\n    \"categoryName\": \"Sports\",\r\n    \"description\": \"Discussion about various sports and related topics.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/update-category/66868e8b4578a000fd11a4d9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"update-category",
+								"66868e8b4578a000fd11a4d9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/categories/delete-category/66866a3de83bbf090827d7ef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"delete-category",
+								"66866a3de83bbf090827d7ef"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
