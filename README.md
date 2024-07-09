@@ -46,7 +46,7 @@ To get started with BackendBoard, follow these steps:
 
 ## Usage
 
-Once the application is running, you can access it at `http://localhost:3000`.
+Once the application is running, you can access it at `http://localhost:8080`.
 
 - **Register and log in** to create a new account.
 - **Create and manage forums** to start discussions on various topics.
