@@ -62,7 +62,6 @@ BackendBoard/src
 ├── database/              # Database configuration and migrations
 ├── errors/                # Error handling
 ├── helpers/               # Helper functions
-├── inputs/                # Input validation
 ├── models/                # Database models
 ├── routes/                # API routes
 ├── server.js              # Entry point of the application
